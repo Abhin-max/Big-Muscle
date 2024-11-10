@@ -1,0 +1,821 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    text-decoration:none;
+    list-style: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: -apple-system, sans-serif;
+}
+:root{
+    --bg-color: #000;
+    --snd-bg-color: #111;
+    --txt-color: #fff;
+    --main-color: #45ffca;
+}
+
+html{
+    font-size: 62.5;
+    overflow-x:var(--bg-color)hidden;
+}
+
+body{
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+section{
+    min-height: 100vh;
+    padding: 10rem 8% 2rem;
+}
+
+header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 9%;
+    background: rgba(0, 0, 0, 0.5) ;
+    backdrop-filter: blur(10px);
+    transition: all 0.5s ease;
+}
+
+.logo{
+    font-size:3rem;
+    color: var(--txt-color);
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.logo:hover{
+    transform: scale(1.1);
+}
+
+span{
+    color: var(--main-color);
+}
+
+.navbar{
+    display: flex;
+}
+
+.navbar a{
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: var(--txt-color);
+    margin-left: 4rem;
+    transition: all 0.5s ease;
+    border-bottom: 3px solid transparent;
+}
+
+.navbar a:hover,
+.navbar a.active{
+    color: var(--main-color);
+    border-bottom: 3px solid var(--main-color)
+}
+
+.nav-btn{
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background: transparent;
+    color:var(--main-color);
+    border: 2px solid var(--main-color);
+    border-radius: 1rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+    transition: all 0.5s ease;
+}
+
+.nav-btn:hover{
+    background: var(--main-color);
+    color: var(--text-color);
+    box-shadow: 0 0 18px var(--main-color);
+}
+
+#menu-icon{
+    font-size: 3.6rem;
+    color: var(--main-color);
+    cursor: pointer;
+    display: none;
+}
+
+.home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-content h3{
+    font-size: 5rem;
+    font-weight: 700;
+    color:white;
+}
+
+.home-content span{
+    font-size: 4rem;
+    font-weight: 500;
+}
+
+span{
+    color: var(--main-color)
+}
+
+.home-content h1{
+    font-size: 5.6rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color:white;
+}
+
+.home-img img{
+    width: 45vw;
+}
+
+.home-img::before{
+    content: 'FITNESS';
+    position: absolute;
+    top: 10%;
+    left: 26%;
+    transform: translateX(-50%);
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 20rem;
+    color: var(--txt-color);
+    opacity: 0.1;
+    z-index: -1;
+}
+
+.home-content p{
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+.btn{
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background: var(--main-color);
+    border-radius: 1rem;
+    box-shadow:none;
+    font-size: 1.6rem;
+    color:var(--bg-color);
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+    transition: 0.5s ease;
+}
+
+.btn:hover{
+    color:var(--txt-color);
+    box-shadow: 0 0 1.6rem var(--main-color);
+}
+
+/* Workout section code*/
+
+.workout{
+    background: var(--bg-color);
+}
+
+.heading{
+    text-align: center;
+    font-size: 6.5rem;
+    color:white;
+}
+
+.workout-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, auto));
+    align-items: center;
+    gap: 2.3rem;
+    margin-top: 4.1rem;
+    color:#fff;
+}
+
+.row {
+    background: var(--bg-color);
+    border-radius: 27px;
+    border: 1px solid transparent;
+    box-shadow: 0 0 5px var(--main-color);
+    padding: 20px;
+    transition: all 0.5s ease;
+}
+
+.row img {
+    height: 100%;
+    width: 100%;
+    border-radius: 27px;
+    margin-bottom: 1.4;
+}
+
+.row h4 {
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.row:hover {
+    border: 1px solid var(--main-color);
+    transform: translateY(-5px) scale(1.04);
+    cursor: pointer;
+}
+
+/* About Us section code */
+
+.about{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.about-img img{
+    border: 2px solid var(--text-color);
+    border-radius: 1rem;
+    transition: 0.5s ease;
+}
+
+.about-img img:hover{
+    transform: scale(1.02);
+    border: 2px solid var(--main-color)
+}
+
+.about-content .heading{
+    text-align:center;
+    font-size:6rem;
+}
+
+.about-content{
+    padding: 0 3rem;
+    color:#fff;
+}
+
+.about-content h2{
+    text-align: left;
+    line-height: 1.2;
+}
+
+.about-content p{
+    margin-top: 20px;
+    margin-bottom: 50px;
+    font-size: 18px;
+}
+
+/* Membership section code */
+
+.plans{
+    background: var(--bg-color);
+    display: flex;
+}
+
+.plans-content{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 4.2rem;
+}
+
+#mh2{
+    margin-top: 100px;
+}
+
+.box{
+    padding-top: 30px;
+    padding-left: 50px;
+    height: 500px;
+    width: 500px;
+    background: var(--bg-color);
+    border-radius: 28px;
+    border: 1px solid transparent;
+    box-shadow: 0 0 5px var(--main-color);
+    transition: all 0.5s ease;
+    cursor: pointer;
+    color:#fff;
+    margin-left: 50px;
+}
+
+.box h3{
+    font-size: 35px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.box ul li{
+    list-style: disc;
+    font-size: 1.7rem;
+    padding-bottom: 1.2rem;
+}
+
+.box a{
+    display: inline-block;
+    font-size:22px;
+    line-height: 1.2rem;
+    font-weight: 700;
+    padding: 7px 0;
+    color: var(--txt-color);
+    border-bottom: 2px solid #5d6c83;
+    transition: all 0.5s ease;
+}
+
+.box i{
+    vertical-align:middle;
+    font-size: 25px;
+    color: var(--main-color);
+    margin-left: 5px;
+}
+
+.box a:hover{
+    border-bottom: 2px solid var(--main-color);
+}
+
+.box:hover{
+    border: 1px solid var(--main-color);
+    transform: translateY(-5px) scale(1.03);
+}
+
+/* reciew section code */
+
+.review{
+    background: var(--bg-color);
+}
+
+.review-box{
+    background-size:  cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:column;
+}
+
+.review .heading{
+    margin-bottom: 5rem;
+}
+
+.review-box img{
+    width:15rem;
+    border-radius: 50%;
+    border: 3px solid var(--main-color);
+    color:#fff;
+}
+
+.wrapper{
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 3rem;
+    color:#fff;
+}
+
+.review-item{
+    min-height: 450px;
+    min-width: 280px;
+    background: var(--snd-bg-color);
+    border: 3px solid rgba(238, 238, 238, 0.3);
+    border-radius: 2rem;
+    margin: 0 2rem;
+    padding: 30px 40px;
+    cursor: pointer;
+    display: flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap: 1rem;
+    color:#fff;
+    transition: 0.5s ease-in-out;
+    margin-top: 40px;
+}
+
+.review-item:hover{
+    border: 3px solid var(--main-color);
+    transform: translateY(-5px) scale(1.03);
+}
+
+.review-item h2{
+    font-size: 2.8rem;
+}
+
+.review-item p{
+    font-size: 1.5rem;
+    line-height: 1.3;
+    text-align: center;
+}
+
+#star{
+    color:gold;
+    font-size: 2rem;
+}
+
+.rating{
+    font-size: 30px;
+}
+
+/* Footer Section Code */
+
+.footer {
+    position:relative;
+    bottom: 0;
+    width: 100%;
+    padding: 40px 0;
+    background: var(--bg-color);
+}
+
+.footer .social{
+    text-align:center;
+    padding-bottom: 20px;
+    color: var(--main-color);
+}
+
+.footer .social a{
+    font-size: 50px;
+    color:var(--main-color);
+    border: 2px solid var(--main-color);
+    width: 55px;
+    height: 55px;
+    line-height: 42px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    margin: 0 10px;
+    transition: 0.3s ease-in-out;
+}
+
+.footer .social a:hover{
+    transform: scale(1.2) translateY(-10px);
+    background: var(--main-color);
+    color:;
+}
+
+.footer .copyright{
+    margin-top:20px;
+    text-align:center;
+    font-size: 16px;
+    color:var(--txt-color)
+}
+
+::-webkit-scrollbar{
+    width: 15px;
+}
+
+::-webkit-scrollbar-thumb{
+    background:var(--main-color);
+    width: 50px;
+}
+
+/* Responsive Design Code */
+
+@media (max-width:1200px){
+    html{
+        font-size:55px;
+    }
+}
+
+@media (max-width:991px){
+    #menu-icon{
+        display:block;
+    }
+    .navbar {
+        position:absolute;
+        top: 100%;
+        right: -100%;
+        width: 225px;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        background:var(--bg-color);
+        transition: all 0.5s ease;
+    }
+    .navbar a{
+        display:block;
+        padding: 17px;
+        font-size:22px;
+    }
+    .navbar.active{
+        right: 0;
+    }
+    header{
+        padding: 2rem 3%;
+    }
+    section{
+        padding: 10rem 3%;
+    }
+    .workout{
+        padding: 7rem;
+    }
+    .about-content h2{
+        margin-top: 2rem;
+        text-align:center;
+        font-size: 5rem;
+    }
+    .review .wrapper{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .footer{
+        padding: 40px 0;
+    }
+}
+@media (max-width:786px){
+    .home{
+        flex-direction:column;
+    }
+    .home-content h3{
+        font-size:4.5rem;
+        margin-top: 1.5rem;
+    }
+    .home-content h1{
+        font-size: 5rem;
+        margin-top: 1.5rem;
+    }
+    .home-content{
+        order: 2;
+    }
+    .home-img img{
+        width: 70vw;
+        margin-top: 4rem;
+    }
+    .about{
+        flex-direction: column;
+    }
+    .about-img img{
+        width:70vw;
+        margin-top:4rem;
+    }
+    .about-content h2{
+        text-align:center;
+    }
+    .services h2{
+        margin-bottom: 3rem;
+    }
+}
+
+@media (max-width:617px){
+    .home-img img{
+        width: 80vw;
+        margin-top: 8rem;
+    }
+    .about-img img{
+        width: 70vw;
+        margin-top: 4rem;
+    }
+}
+
+@media (max-width:450px){
+    html{
+        font-size:50%;
+    }
+}
+
+/* nutrition section code */
+
+.nutrition{
+    background: var(--bg-color)
+}
+
+.heading{
+    text-align: center;
+    font-size: 6.5rem;
+    color:white;
+}
+
+.nutrition-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, auto));
+    align-items: center;
+    gap: 2.3rem;
+    margin-top: 4.1rem;
+    color:#fff;
+}
+
+.meal-plan {
+    background: var(--bg-color);
+    border-radius: 27px;
+    border: 1px solid transparent;
+    box-shadow: 0 0 5px var(--main-color);
+    padding: 20px;
+    transition: all 0.5s ease;
+}
+
+.meal-plan img {
+    height: 100%;
+    width: 100%;
+    border-radius: 27px;
+    margin-bottom: 1.4;
+}
+
+.meal-plan h3 {
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.meal-plan:hover {
+    border: 1px solid var(--main-color);
+    transform: translateY(-5px) scale(1.04);
+    cursor: pointer;
+}
+
+
+/*nutrition gain*/
+
+.gain{
+    background: var(--bg-color);
+}
+
+.heading{
+    text-align: center;
+    font-size: 6.5rem;
+    color:white;
+}
+
+.gain-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, auto));
+    align-items: center;
+    gap: 2.3rem;
+    margin-top: 4.1rem;
+    color:#fff;
+}
+
+.row {
+    background: var(--bg-color);
+    border-radius: 27px;
+    border: 1px solid transparent;
+    box-shadow: 0 0 5px var(--main-color);
+    padding: 20px;
+    transition: all 0.5s ease;
+}
+
+.row h4 {
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.row:hover {
+    border: 1px solid var(--main-color);
+    transform: translateY(-5px) scale(1.04);
+    cursor: pointer;
+}
+
+/*nutrition loss*/
+
+.loss{
+    background: var(--bg-color);
+}
+
+.heading{
+    text-align: center;
+    font-size: 6.5rem;
+    color:white;
+}
+
+.loss-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, auto));
+    align-items: center;
+    gap: 2.3rem;
+    margin-top: 4.1rem;
+    color:#fff;
+}
+
+.row {
+    background: var(--bg-color);
+    border-radius: 27px;
+    border: 1px solid transparent;
+    box-shadow: 0 0 5px var(--main-color);
+    padding: 20px;
+    transition: all 0.5s ease;  
+}
+
+.row h4 {
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.row:hover {
+    border: 1px solid var(--main-color);
+    transform: translateY(-5px) scale(1.04);
+    cursor: pointer;
+}
+
+/* Overall Health*/
+
+.health{
+    background: var(--bg-color);
+}
+
+.heading{
+    text-align: center;
+    font-size: 6.5rem;
+    color:white;
+}
+
+.health-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, auto));
+    align-items: center;
+    gap: 2.3rem;
+    margin-top: 4.1rem;
+    color:#fff;
+}
+
+.row {
+    background: var(--bg-color);
+    border-radius: 27px;
+    border: 1px solid transparent;
+    box-shadow: 0 0 5px var(--main-color);
+    padding: 20px;
+    transition: all 0.5s ease;
+}
+
+.row h4 {
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.row:hover {
+    border: 1px solid var(--main-color);
+    transform: translateY(-5px) scale(1.04);
+    cursor: pointer;
+}
+
+
+/* joinus */
+
+#formbody{
+    background-image:url(./images/gym2.webp);
+    background-repeat:no-repeat;;
+    background-size: cover;
+}
+#joinus{
+    background-color:rgba(32, 30, 30, 0.392);
+    width:50%;
+    border-radius: 15px;
+    background-attachment:fixed;
+}
+#formheading{
+    text-align: center;
+    color:var(--main-color);
+}
+form{
+    padding: 40px;
+    text-align:left;
+}
+label{
+    display:block;
+    margin-top:15px;
+    font-size: 20px;
+    color:var(--main-color);
+    font-weight:bold;
+    text-align: left;
+}
+input[type="text"],input[type="email"],input[type="password"],input[type="number"],
+select{
+    width:100%;
+    height:50px;
+    margin:2px;
+    border:none;
+    border-radius:10px;
+}
+input[type="range"]{
+    width:100%;
+    cursor:pointer;
+}
+input[type="submit"]{
+    background-color:var(--main-color);
+    color:var(--bg-color);
+    padding: 10px;
+    border-radius:10px;
+}
+input[type="reset"]{
+    background-color:var(--main-color);
+    color:var(--bg-color);
+    padding: 10px;
+    border-radius:10px;
+}
+input[type="submit"]:hover{
+    transform: scale(1.09);
+    cursor: pointer;
+}
+input[type="reset"]:hover{
+    transform: scale(1.09);
+    cursor: pointer;
+}
+.error{
+    color:red;
+    font-size: 18px;
+    font-weight: bold;
+}
+.span1{
+    color:var(--main-color)
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <title>Document</title>
+    
+</head>
+<body id="formbody">
+    <center>
+        <div id="joinus">
+            <form onsubmit="return(sub())" name="myform">
+                <h1 id="formheading">Join Us</h1>
+                <label for="name">Name:</label>
+                <input type="text" name="fullname" id="name" placeholder="Full Name">
+                <span class="error" id="nameerror"></span><br><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="Email">
+                <span class="emailerror"></span><br><br>
+                <label for="password">Password:</label>
+                <input type="text" id="password" placeholder="Password">
+                <span class="passworderror"></span><br><br>
+                <label for="gender">Gender:</label>&nbsp;
+                <input type="radio" name="gender" value="male"><span class="span1">Male</span> &nbsp;
+                <input type="radio" name="gender" value="female"><span class="span1">Female</span><br><br>
+                <label for="age">Age:</label>
+                <input type="range" name="age" id="age" min="13" max="100" step="1"  value="24">
+                <span id=ageValue>24 </span><span id=span1> Years old</span><br><br>
+                <label for="weight">Weight:</label>
+                <input type="number" id="weight" placeholder="Weight"><br><br>
+                <label for="fitnesslevel">Fitness Level</label>
+                <select name="fitnesslevel" id="fitnesslevel">
+                    <option value="select">select</option>
+                    <option value="beginner">Beginner</option>
+                    <option value="intermediate">Intermediate</option>
+                    <option value="Advanced">Advanced</option>
+                </select><br><br>
+                <input type="submit" value="Submit Form">
+                <input type="reset" value="Reset">
+            </form>
+        </div>
+    </center>
+    <script>
+        age.addEventListener("input", function() {
+          ageValue.textContent = age.value;
+        });
+      </script>
+</body>
+</html>
